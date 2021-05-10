@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import * as EventEmitter from 'events';
 
 @Component({
   selector: 'formulario',
@@ -7,10 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
+  nuevaTarea: Tarea;
+  @Output() tareaCreada: EventEmitter<Tarea>;
 
-  constructor() { }
+
+  constructor() {
+    this.nuevaTarea = {};
+  }
 
   ngOnInit(): void {
+  }
+
+  onClick() {
+
   }
 
 }
