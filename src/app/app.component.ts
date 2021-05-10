@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TodoComplejo';
+
+
+  constructor() {
+    this.arrTareasCreadas = [];
+    this.arrTareasTerminadas = [];
+  }
+
+  onTareaCreada($event) {
+    this.arrTareasCreadas.push($event);
+  }
 }
