@@ -1,14 +1,15 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import * as EventEmitter from 'events';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Tarea } from '../tarea.interface';
 
 @Component({
-  selector: 'lista',
+  selector: 'app-lista',
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
+
   @Input() titulo: string;
-  @Input() tareas: Tareas[];
+  @Input() tareas: Tarea[];
 
   @Output() tareaSeleccionada: EventEmitter<number>;
 
@@ -22,13 +23,5 @@ export class ListaComponent implements OnInit {
   onClick(pIndice) {
     this.tareaSeleccionada.emit(pIndice);
   }
-  onTareaSeleccionada($event) {
-    const tareasBorradas = this.arrTareasCreadas.splice($event, 1);
-    this.arrTareasTerminadas.push(tareasBorradas[0]);
 
-  }
 }
-
-//Cómo puedo pasar de la Lista DONE a ALL. Hay que pensar cómo se captura el output.
-//¿Cómo ponerlo bonito con CSS?
-

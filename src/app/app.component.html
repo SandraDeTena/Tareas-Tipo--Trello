@@ -1,3 +1,4 @@
-<formulario (tareaCreada)="onTareaCreada($event)"></formulario>
+<app-formulario (tareaCreada)="onTareaCreada($event)"></app-formulario>
 
-<lista titulo></lista>
+<app-lista titulo="TODO" [tareas]="arrTareasCreadas" (tareaSeleccionada)="onTareaSeleccionada($event)"></app-lista>
+<app-lista titulo="DONE" [tareas]="arrTareasTerminadas"></app-lista>

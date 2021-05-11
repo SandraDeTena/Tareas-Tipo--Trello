@@ -1,11 +1,10 @@
-<h2>{{titulo}}</h2>
+<h2>{{ titulo }}</h2>
 <div class="tareas">
-    <div class="tarea" *ngFor="let tarea of tareas" let indice="index;">
+    <div class="tarea" *ngFor="let tarea of tareas; let indice = index;">
         <div>
-            <h3>{{tarea.titulo}}</h3>
-            <p>{{tarea.descripcion}}</p>
+            <h3>{{ tarea.titulo }}</h3>
+            <p>{{ tarea.descripcion }}</p>
             <button (click)="onClick(indice)">DONE</button>
-            <!-- Borrar elementos de un ARRAY, tienes que hacer a través de los un INDEX.  -->
         </div>
         <img [src]="tarea.imagen" alt="">
     </div>
